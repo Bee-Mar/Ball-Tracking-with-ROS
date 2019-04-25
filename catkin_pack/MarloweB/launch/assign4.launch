@@ -1,0 +1,13 @@
+<launch>
+
+	<include file="$(find turtlebot_bringup)/launch/minimal.launch" />
+
+	<include file="$(find usb_cam)/launch/usb_cam-test.launch" >
+		<param name="video_device" value="/dev/video1" />
+	</include>
+
+	<include file="$(find astra_launch)/launch/astra.launch" />
+
+    <node pkg="MarloweB" name="ball_tracker" type="ball_tracker.cpp"/>
+
+</launch>
